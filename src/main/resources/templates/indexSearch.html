@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <title>KoTAK</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon"/>
+
+<!--     Bootstrap Core CSS -->
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"/> 
+<!--     MetisMenu CSS -->
+    <link rel="stylesheet" th:href="@{/css/metisMenu.min.css}"/> 
+<!--     Custom CSS -->
+    <link rel="stylesheet" th:href="@{/css/sb-admin-2.css}"/> 
+<!--     Morris Charts CSS -->
+    <link rel="stylesheet" th:href="@{/css/morris.css}"/> 
+<!--     Custom Fonts -->
+    <link rel="stylesheet" th:href="@{/css/font-awesome.min.css}"/> 
+    <link rel="stylesheet" th:href="@{/css/fontawesome.min.css}"/> 
+
+</head>
+
+<body>
+	<style>
+   			.h{
+   			background-color:red;
+   			}
+   </style>
+    <div id="wrapper">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">Logo Letakkan di sini</a>
+            </div>
+            <!-- /.navbar-header =================================================================================================-->
+
+            <ul class="nav navbar-top-links navbar-right">
+                   	 <li class="dropdown">
+                        <a class="dropdown-toggle"  th:href="@{/register}">Buat Akun Baru<span class="caret"></span></a>
+                         <ul class="dropdown-menu dropdown-lr animated flipInX" role="menu"></ul>
+                     </li>
+                     
+	                <li class="dropdown">
+	                     <a class="dropdown-toggle"  th:href="@{/login}">Masuk Log<span class="caret"></span></a>
+	                        <ul class="dropdown-menu dropdown-lr animated slideInRight" role="menu"></ul>
+	                </li>
+	                
+           </ul>
+            <!-- /.navbar-top-links -->
+
+<!-- =============================================================================================================================== -->
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+                        <li class="sidebar-search">
+                            <div class="input-group custom-search-form">
+                            <form class="form-signin" th:action="@{/search}" method="GET">
+	                                <input type="search" class="form-control" name="judulartikel" th:value="${search}" id="q" placeholder="Search..."/>
+	                                
+	                                <span class="input-group-btn">
+
+	                            </span>
+                            </form>
+                            <h1 th:text="${judulartikel}"></h1>
+                            </div>
+                            <!-- /input-group -->
+                        </li>
+                        
+                    </ul>
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+        </nav>
+
+        <div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">Selamat Datang di Korpus Kebudayaan Batak</h1>
+                 
+                    
+                </div>
+                <!-- /.col-lg-12 -->
+<!--====================================================ISI ARTIKEL ===============================================================  -->
+                <div class="col-lg-12">
+                	<div class="container">
+<!--                 		 <div class="row"> -->
+					        <div class="col-md-9" style="margin-left: -30px;">
+					              <div class="panel panel-default">
+					               <div class="panel-body">
+<!-- ========================================================Transaksi ke database ==================================================-->
+					               <div th:each="search :${artikel}" th:if="${not #lists.isEmpty(artikel)}">
+					               
+					                  <h3 th:text="${search.judulartikel}"> </h3>
+					                   
+					                    <div class="info-meta">
+					                        <ul class="list-inline">
+<!-- 					                            <li class="fa fa-calendar"> Diedit Pada: <i  th:text="${search.created_at}"></i></li> -->
+<!-- 					                            <li class="fa fa-heart-o"><span  th:text="${search.suka}"></span></li> -->
+<!-- 												<li class="fa fa-user"> Diposting oleh : <span th:text=" ${search.lokasi}"></span></li> -->
+<!-- 					                            <li class="pull-right">Category : Education</li> -->
+					                        </ul>
+					                    </div>
+					                  
+					                    <div class = "media">
+					                       <a class = "pull-left" href = "#">
+					                          <img class = "media-object " src = "images/education.jpg" width="100%" height="200px" />
+					                       </a>
+					                   
+					                       <div class = "media-body">
+					                 
+					                 
+					                       	 <div class="readmore">
+					                       	 	<p th:text="${search.isiartikel}"> </p> 
+						                     </div>
+						                     
+						                 
+						                   </div>
+					                    </div>
+					                    
+					                    <hr/>
+					                  
+					               </div>
+					               
+					               </div>
+<!--  ===========================================================batas ============================================================-->
+					            </div>
+					         </div>
+					      
+					            
+					            
+					            <div class="col-md-3">
+					            	
+					            	<a href="kotak/tambah_informasi"><button type="button" class="btn btn-success btn-lg btn-responsive" style="margin-left: -15px; width: 2.1in; ">Tambah Informasi</button></a>
+					            </div>
+					            
+					             
+					            
+					            
+<!-- 					        </div>    -->
+<!-- 					        </div>    -->
+					         
+
+					    	
+                	</div>
+                
+                </div>
+                
+            </div>
+            <!-- /.row -->
+           
+            <!-- /.row -->
+        </div>
+        <!-- ======================================================================================================================== -->
+        <!-- /#page-wrapper -->
+
+    </div>
+    
+    
+    <!--FOOTER-->
+    <div class="footer-bottom">
+        <div class="container-fluid text-center">
+            <p>Copyright &copy; 2017,  DTC. Developed by <a href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile">Kelompok 5 Projek PSI</a></p>
+        </div>
+    </div>           
+    
+    <!--=================================================More Info========================================================= -->
+    <script th:src="@{/js/jquery-3.1.1.min.js}"></script>
+    <script th:src="@{/js/jquery.expander.js}"></script>
+    
+    <script type="text/javascript">
+    	var s = document.querySelector('input[type="search"]'),
+    	function h(){
+    		alert("jh"");
+    		
+    	}
+    	
+    	s.addEventListener('keyup',h,false);
+		$(document).ready(function() {
+			$('#search').on('keyup',function(){
+				alert("test");
+			})
+			function fuzzyMatch(text, search){
+	        	//Remove spaces, lowercase the search so the search
+	        	search = search.replace(/\ /g, '').toLowerCase();
+	        	var tokens = text.split('');
+	        	var searchPosition = 0;
+	        	
+	        	$.each(tokens, function(i, textChar){
+	        		if(textChar.toLowerCase() == search[searchPosition]){
+	        			tokens[i] = '<strong>' + textChar + '</strong>';
+	        			searchPosition++;
+	        			if(searchPosition >= search.length){
+	        				return false;
+	        			}
+	        		}
+	        	});
+	        	
+	        	if(searchPosition != search.length){
+	        		return 'not found';
+	        	}
+	        	return tokens.join('');
+	        }
+			
+			function refreshSearch(){
+            	var search = $('input[name = search]').val();
+            	var results = [];
+            	$titles = $('#text').text();
+            	$.each($titles, function(i, title){
+            		var result = fuzzyMatch(title, search);
+            		if(result){
+            			result.push("<li>" + result + "</li>")
+            		}
+            	});
+            	
+            	var resultsHTML = results.join('\n');
+            	$("ul.results").html(resultsHTML);
+            }
+			
+			$(function(){
+            	refreshSearch();
+            	$('input[name = search]').keyup(refreshSearch);
+            });
+			
+			
+			$(".readmore").expander({
+				slicePoint : 300,
+				expandText : 'More',
+				userCollapseText : 'Less'
+			});
+			
+			
+		});
+		
+	</script>
+	<!-- ================================================================================== -->
+    
+    
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+<!--     <script th:src="@{/js/jquery.min.js}"></script> -->
+    <script th:src="@{/js/bootstrap.min.js}"></script>
+    <script th:src="@{/js/metisMenu.min.js}"></script>
+    <script th:src="@{/js/raphael.min.js}"></script>
+    <script th:src="@{/js/morris.min.js}"></script>
+    <script th:src="@{/js/morris-data.js}"></script>
+    
+<!--     Custom Theme JavaScript -->
+    <script th:src="@{/js/sb-admin-2.js}"></script>
+<!--     <script th:src="@{/js/jquery-1.11.1.min.js}"></script> -->
+
+</body>
+
+</html>

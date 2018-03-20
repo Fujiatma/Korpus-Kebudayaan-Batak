@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <title>KoTAK</title>
+    <link rel="icon" th:href="@{/image/seal.jpg}" type="image/jpeg"/>
+
+<!--     Bootstrap Core CSS -->
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"/> 
+<!--     MetisMenu CSS -->
+    <link rel="stylesheet" th:href="@{/css/metisMenu.min.css}"/> 
+<!--     Custom CSS -->
+    <link rel="stylesheet" th:href="@{/css/sb-admin-2.css}"/> 
+<!--     Morris Charts CSS -->
+    <link rel="stylesheet" th:href="@{/css/morris.css}"/> 
+<!--     Custom Fonts -->
+    <link rel="stylesheet" th:href="@{/css/font-awesome.min.css}"/> 
+    <link rel="stylesheet" th:href="@{/css/fontawesome.min.css}"/> 
+   
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">Logo Letakkan di sini</a>
+            </div>
+            <!-- /.navbar-header =================================================================================================-->
+
+            <ul class="nav navbar-top-links navbar-right">
+	                <li class="dropdown">
+	                     <a class=""  th:href="logOut">LogOut<span class=""></span></a>
+<!-- 	                        <ul class="dropdown-menu dropdown-lr animated slideInRight" role="menu"></ul> -->
+	                </li>
+	                
+           </ul>
+            <!-- /.navbar-top-links -->
+
+<!-- =============================================================================================================================== -->
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+                        <li class="sidebar-search">
+                            <div class="input-group custom-search-form">
+                            <form class="form-signin" th:action="@{/search}" method="GET">
+	                                <input type="search" class="form-control" name="q" placeholder="Search..."/>
+	                                <span class="input-group-btn">
+<!-- 	                                <button class="btn btn-default" type="button"> -->
+<!-- 	                                    <i class="fa fa-search"></i> -->
+<!-- 	                                </button> -->
+	                            </span>
+                            </form>
+                            
+                            
+                            </div>
+                            <!-- /input-group -->
+                        </li>
+                        <li>
+                            <a href="/"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Batak Toba<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+					<a href="/NonUserJenisTarian/toba"> Tarian </a>
+                                </li>
+                                <li>
+                  	<a href="/NonUserJenisBendaBersejarah/toba"> Benda Bersejarah </a>                              
+                               </li>
+                                <li>
+					<a href="/NonUserJenisMakanan/toba"> Makanan </a>
+                                </li>
+                                <li>
+					<a href="/NonUserJenisMusik/toba"> Musik </a>
+                                </li>
+                                <li>
+					<a href="/NonUserJenisPakaianAdat/toba"> Pakaian Adat </a>
+                                </li>
+                                <li>
+					<a href="/NonUserJenisRumahAdat/toba"> Rumah Adat </a>
+                                </li>
+                                <li>
+					<a href="/NonUserJenisLainya/toba"> Lainya </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Batak Simalungun<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+					<a href="/NonUserJenisTarian/simalungun"> Tarian </a>
+                                </li>
+                                <li>
+                  	<a href="/NonUserJenisBendaBersejarah/simalungun"> Benda Bersejarah </a>                              
+                               </li>
+                                <li>
+					<a href="/NonUserJenisMakanan/simalungun"> Makanan </a>
+                                </li>
+                                <li>
+					<a href="/NonUserJenisMusik/simalungun"> Musik </a>
+                                </li>
+                                <li>
+					<a href="/NonUserJenisPakaianAdat/simalungun"> Pakaian Adat </a>
+                                </li>
+                                <li>
+					<a href="/NonUserJenisRumahAdat/simalungun"> Rumah Adat </a>
+                                </li>
+                                <li>
+					<a href="/NonUserJenisLainya/simalungun"> Lainya </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Batak Karo<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+					<a href="/NonUserJenisTarian/karo"> Tarian </a>
+                                </li>
+                                <li>
+                  	<a href="/NonUserJenisBendaBersejarah/karo"> Benda Bersejarah </a>                              
+                               </li>
+                                <li>
+					<a href="/NonUserJenisMakanan/karo"> Makanan </a>
+                                </li>
+                                <li>
+					<a href="/NonUserJenisMusik/karo"> Musik </a>
+                                </li>
+                                <li>
+					<a href="/NonUserJenisPakaianAdat/karo"> Pakaian Adat </a>
+                                </li>
+                                <li>
+					<a href="/NonUserJenisRumahAdat/karo"> Rumah Adat </a>
+                                </li>
+                                <li>
+					<a href="/NonUserJenisLainya/karo"> Lainya </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Batak Mandailing<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+					<a href="/NonUserJenisTarian/mandailing"> Tarian </a>
+                                </li>
+                                <li>
+                  	<a href="/NonUserJenisBendaBersejarah/mandailing"> Benda Bersejarah </a>                              
+                               </li>
+                                <li>
+					<a href="/NonUserJenisMakanan/mandailing"> Makanan </a>
+                                </li>
+                                <li>
+					<a href="/NonUserJenisMusik/mandailing"> Musik </a>
+                                </li>
+                                <li>
+					<a href="/NonUserJenisPakaianAdat/mandailing"> Pakaian Adat </a>
+                                </li>
+                                <li>
+					<a href="/NonUserJenisRumahAdat/mandailing"> Rumah Adat </a>
+                                </li>
+                                <li>
+					<a href="/NonUserJenisLainya/mandailing"> Lainya </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Batak Pakpak<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+					<a href="/NonUserJenisTarian/pakpak"> Tarian </a>
+                                </li>
+                                <li>
+                  	<a href="/NonUserJenisBendaBersejarah/pakpak"> Benda Bersejarah </a>                              
+                               </li>
+                                <li>
+					<a href="/NonUserJenisMakanan/pakpak"> Makanan </a>
+                                </li>
+                                <li>
+					<a href="/NonUserJenisMusik/pakpak"> Musik </a>
+                                </li>
+                                <li>
+					<a href="/NonUserJenisPakaianAdat/pakpak"> Pakaian Adat </a>
+                                </li>
+                                <li>
+					<a href="/NonUserJenisRumahAdat/pakpak"> Rumah Adat </a>
+                                </li>
+                                <li>
+					<a href="/NonUserJenisLainya/pakpak"> Lainya </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Batak Angkola<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+					<a href="/NonUserJenisTarian/angkola"> Tarian </a>
+                                </li>
+                                <li>
+                  	<a href="/NonUserJenisBendaBersejarah/angkola"> Benda Bersejarah </a>                              
+                               </li>
+                                <li>
+					<a href="/NonUserJenisMakanan/angkola"> Makanan </a>
+                                </li>
+                                <li>
+					<a href="/NonUserJenisMusik/angkola"> Musik </a>
+                                </li>
+                                <li>
+					<a href="/NonUserJenisPakaianAdat/angkola"> Pakaian Adat </a>
+                                </li>
+                                <li>
+					<a href="/NonUserJenisRumahAdat/angkola"> Rumah Adat </a>
+                                </li>
+                                <li>
+					<a href="/NonUserJenisLainya/angkola"> Lainya </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+        </nav>
+
+        <div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">Selamat Datang di Korpus Kebudayaan Batak</h1>
+                 
+                    
+                </div>
+                <!-- /.col-lg-12 -->
+<!--====================================================ISI ARTIKEL ===============================================================  -->
+ 
+ <div class="container">
+	<div class="row">
+		<div class="col-sm-12 col-md-offset">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                <h3 class="panel-title">Informasi Ku</h3>
+                    <span class="pull-right">
+                        <!-- Tabs -->
+                        
+                    </span>
+                </div>
+                <div class="panel-body">
+                    <div class="tab-content">
+	                   <table class="responstable">
+	                   
+	                   <tr>
+	                   <th>Gambar</th>
+	                   <th>Judul Informasi</th>
+	                   <th>Isi Informasi</th>
+	                   <th>Lokasi</th>
+	                   <th>Referensi</th>
+	                   <th>Suku</th>
+	                   <th>Keyword</th>
+	                   
+	                   </tr>
+	                 
+	                   <tr th:each="r:${allArtikel}">
+	                   	<td ><img th:src="${r.gambar}"/></td>
+	                   	<td th:text="${r.judulartikel}"></td>
+	                   	<td th:text="${r.isiartikel}"></td>
+	                   	<td th:text="${r.lokasi}"></td>
+	                   	<td th:text="${r.referensi}"></td>
+	                   	<td th:text="${r.suku}"></td>
+	                   	<td th:text="${r.keyword}"></td>
+	           		   		
+	                   </tr>
+	                              
+	                   </table>	                   
+                    </div>
+                </div>
+            </div>
+        </div>
+	</div>
+	</div>
+                
+            </div>
+            <!-- /.row -->
+           
+            <!-- /.row -->
+        </div>
+        <!-- ======================================================================================================================== -->
+        <!-- /#page-wrapper -->
+
+    </div>
+    
+    
+    <!--FOOTER-->
+    <div class="footer-bottom">
+        <div class="container-fluid text-center">
+            <p>Copyright &copy; 2017,  DTC. Developed by <a href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile">Kelompok 5 Projek PSI</a></p>
+        </div>
+    </div>           
+    
+    <!--=================================================More Info========================================================= -->
+    <script th:src="@{/js/jquery-3.1.1.min.js}"></script>
+    <script th:src="@{/js/jquery.expander.js}"></script>
+    
+    <script type="text/javascript">
+		$(document).ready(function() {
+			$(".readmore").expander({
+				slicePoint : 300,
+				expandText : '',
+				userCollapseText : ''
+			});
+		});
+	</script>
+	<!-- ================================================================================== -->
+    
+    
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+<!--     <script th:src="@{/js/jquery.min.js}"></script> -->
+    <script th:src="@{/js/bootstrap.min.js}"></script>
+    <script th:src="@{/js/metisMenu.min.js}"></script>
+    <script th:src="@{/js/raphael.min.js}"></script>
+    <script th:src="@{/js/morris.min.js}"></script>
+    <script th:src="@{/js/morris-data.js}"></script>
+    
+<!--     Custom Theme JavaScript -->
+    <script th:src="@{/js/sb-admin-2.js}"></script>
+<!--     <script th:src="@{/js/jquery-1.11.1.min.js}"></script> -->
+
+</body>
+
+</html>

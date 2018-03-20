@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+
+
+<title>CodePen - Dynamically creating new options for select2 in
+	version 4</title>
+
+<link rel="stylesheet" media="screen" href="https://production-assets.codepen.io/assets/fullpage/fullpage-41da1940552efbfe5f47516aff7086caf5c52e7ebbeac5e92df76e3c9fd66950.css"/>
+<link href="//fonts.googleapis.com/css?family=Lato:400,900,400italic,700italic" rel="stylesheet"/>
+<link rel="alternate" type="application/json+oembed"href="https://codepen.io/api/oembed?url=https://codepen.io/alexweissman/pen/zremOV&amp;format=json" title="Dynamically creating new options for select2 in version 4"/>
+
+<script async="" src="//www.google-analytics.com/analytics.js"></script>
+
+<style type="text/css">
+:root .ad {
+	display: none !important;
+}
+
+@font-face {
+	font-family: uc-nexus-iconfont;
+	src:
+		url(chrome-extension://pogijhnlcfmcppgimcaccdkmbedjkmhi/res/font_9qmmi8b8jsxxbt9.woff)
+		format('woff'),
+		url(chrome-extension://pogijhnlcfmcppgimcaccdkmbedjkmhi/res/font_9qmmi8b8jsxxbt9.ttf)
+		format('truetype')
+}
+</style>
+
+</head>
+<body class="">
+	<select id="state" class="js-example-basic-single" type="text"
+		style="width: 90%">
+		<option value="AL">Alabama</option>
+		<option value="WY">Wyoming</option>
+	</select>
+	<br />
+	<br />
+	<input id="new-state" type="text" />
+	<button type="button" id="btn-add-state">Set state value</button>
+
+
+	<div>
+		<script type="text/javascript">
+			$(document).ready(
+					function() {
+						$("#state").select2({
+							tags : true
+						});
+
+						$("#btn-add-state").on(
+								"click",
+								function() {
+									var newStateVal = $("#new-state").val();
+									// Set the value, creating a new option if necessary
+									if ($("#state").find(
+											"option[value='" + newStateVal
+													+ "']").length) {
+										$("#state").val(newStateVal).trigger(
+												"change");
+									} else {
+										// Create the DOM option that is pre-selected by default
+										var newState = new Option(newStateVal,
+												newStateVal, true, true);
+										// Append it to the select
+										$("#state").append(newState).trigger(
+												'change');
+									}
+								});
+					});
+		</script>
+	</div>
+
+
+</body>
+
+</html>
